@@ -1,0 +1,33 @@
+/* Great Books of the Indian Subcontinent — shared web fonts (self-hosted, latin subset)
+   Theme: Indigo & Marigold. Display = Marcellus, Body = Mukta. */
+
+@font-face{
+  font-family:"Marcellus";
+  font-style:normal;font-weight:400;font-display:swap;
+  src:url("fonts/marcellus-400.woff2") format("woff2");
+}
+@font-face{
+  font-family:"Mukta";
+  font-style:normal;font-weight:300;font-display:swap;
+  src:url("fonts/mukta-300.woff2") format("woff2");
+}
+@font-face{
+  font-family:"Mukta";
+  font-style:normal;font-weight:400;font-display:swap;
+  src:url("fonts/mukta-400.woff2") format("woff2");
+}
+@font-face{
+  font-family:"Mukta";
+  font-style:normal;font-weight:500;font-display:swap;
+  src:url("fonts/mukta-500.woff2") format("woff2");
+}
+@font-face{
+  font-family:"Mukta";
+  font-style:normal;font-weight:600;font-display:swap;
+  src:url("fonts/mukta-600.woff2") format("woff2");
+}
+@font-face{
+  font-family:"Mukta";
+  font-style:normal;font-weight:700;font-display:swap;
+  src:url("fonts/mukta-700.woff2") format("woff2");
+}
