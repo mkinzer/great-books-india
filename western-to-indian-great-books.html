@@ -69,9 +69,17 @@ footer.foot{border:1px solid var(--line);border-top:none;background:var(--panel-
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
 </style>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+.home-nav{margin:0 0 16px}
+.home-btn{display:inline-flex;align-items:center;gap:.42em;font:600 12.5px/1 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.02em;color:#16223b;text-decoration:none;padding:7px 13px;border:1px solid #c2c7b8;border-radius:999px;background:rgba(255,255,255,.6);transition:background .14s,border-color .14s}
+.home-btn:hover{background:#fff;border-color:#c19a3f}
+.home-btn .ar{color:#c19a3f;font-weight:700;font-size:1.05em;line-height:0}
+</style>
 </head>
 <body>
 <div class="wrap">
+  <p class="home-nav"><a class="home-btn" href="index.html"><span class="ar">&lsaquo;</span> Home</a></p>
   <header class="mast">
     <p class="kicker">A crosswalk</p>
     <h1>From the Western canon to the Indian great books</h1>
