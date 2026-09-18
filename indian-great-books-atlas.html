@@ -6,23 +6,24 @@
 <title>An Atlas of the Indian Great Books</title>
 <style>
 :root{
-  --ink:#16223b;
-  --ink-soft:#525d78;
-  --ink-faint:#8a92a6;
-  --page:#e2e6dc;
-  --panel:#f4f5ef;
-  --panel-2:#eceee5;
-  --sea:#e9ede7;
-  --land:#d5dbc8;
-  --land-ctx:#dfe2d6;
-  --stroke:#7c8496;
-  --stroke-soft:#aab0a2;
-  --grid:#c7ccbe;
-  --gold:#c19a3f;
-  --line:#d3d6ca;
-  --shadow:0 1px 2px rgba(22,34,59,.10),0 6px 18px rgba(22,34,59,.06);
-  --serif:"Palatino Linotype","Book Antiqua","URW Palladio L",Palatino,"Iowan Old Style",Georgia,serif;
-  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --indigo:#26305f; --indigo2:#323e78; --madder:#b23a2b; --marigold:#e2a013; --teal:#237d72;
+  --ink:#26305f;
+  --ink-soft:#5d5346;
+  --ink-faint:#8a7f6d;
+  --page:#f6efe0;
+  --panel:#fbf6ec;
+  --panel-2:#f1e7d4;
+  --sea:#eee7d6;
+  --land:#e2d5b6;
+  --land-ctx:#ebe2ce;
+  --stroke:#6f6a86;
+  --stroke-soft:#b7ac90;
+  --grid:#dacfb6;
+  --gold:#e2a013;
+  --line:#e6dcc8;
+  --shadow:0 1px 2px rgba(38,48,95,.10),0 6px 18px rgba(38,48,95,.07);
+  --serif:"Marcellus",Georgia,serif;
+  --sans:"Mukta",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
 *{box-sizing:border-box}
 html,body{margin:0}
@@ -39,35 +40,35 @@ body{
 
 /* ---- Masthead ---- */
 header.mast{
-  border:1px solid var(--ink);
-  background:var(--panel);
-  padding:18px 22px 16px;
+  border:1px solid var(--indigo);
+  border-bottom:3px solid var(--marigold);
+  background:var(--indigo);
+  color:#f3ead6;
+  padding:20px 24px 18px;
   position:relative;
-}
-header.mast:before{
-  content:"";position:absolute;inset:4px;border:1px solid var(--stroke-soft);pointer-events:none;
 }
 .mast h1{
   font-family:var(--serif);
-  font-weight:600;
+  font-weight:400;
   font-size:clamp(24px,4.6vw,40px);
-  letter-spacing:.2px;
+  letter-spacing:.4px;
   line-height:1.08;
-  margin:0 0 4px;
+  margin:0 0 5px;
+  color:#f6efe0;
 }
 .mast .sub{
-  font-family:var(--serif);
-  font-style:italic;
-  color:var(--ink-soft);
-  font-size:clamp(14px,2.2vw,18px);
+  font-family:var(--sans);
+  font-weight:300;
+  color:#e5dcc7;
+  font-size:clamp(14px,2.2vw,17px);
   max-width:74ch;
   margin:0;
 }
 .mast .meta{
-  margin-top:10px;font-size:12.5px;color:var(--ink-faint);
+  margin-top:11px;font-size:12.5px;color:#c6bda6;
   display:flex;gap:16px;flex-wrap:wrap;align-items:center;
 }
-.mast .meta b{color:var(--ink-soft);font-weight:600}
+.mast .meta b{color:#f0e7d2;font-weight:600}
 
 /* ---- Controls ---- */
 .controls{
@@ -139,8 +140,8 @@ svg.map.grabbing{cursor:grabbing}
 .country.ctx{fill:var(--land-ctx)}
 .graticule{fill:none;stroke:var(--grid);stroke-width:.6;vector-effect:non-scaling-stroke;opacity:.7}
 .frame{fill:none;stroke:var(--ink);stroke-width:1.2;vector-effect:non-scaling-stroke}
-.statelines{fill:none;stroke:var(--stroke-soft);stroke-width:.5;vector-effect:non-scaling-stroke;opacity:0;pointer-events:none}
-.clabel{font-family:var(--serif);font-style:italic;fill:var(--ink-faint);
+.statelines{fill:none;stroke:#8f86a0;stroke-width:.6;vector-effect:non-scaling-stroke;pointer-events:none}
+.clabel{font-family:var(--serif);font-style:normal;fill:#7d7460;
   font-size:12.5px;text-anchor:middle;pointer-events:none;paint-order:stroke;
   stroke:var(--sea);stroke-width:3px;stroke-linejoin:round}
 .marker{cursor:pointer}
@@ -153,7 +154,7 @@ svg.map.grabbing{cursor:grabbing}
 
 .map-legend{
   position:absolute;right:12px;bottom:12px;z-index:5;
-  background:rgba(244,245,239,.94);border:1px solid var(--ink);
+  background:rgba(251,246,236,.95);border:1px solid var(--indigo);
   padding:10px 12px 11px;max-width:250px;backdrop-filter:blur(2px);
   box-shadow:var(--shadow);
 }
@@ -180,8 +181,8 @@ svg.map.grabbing{cursor:grabbing}
 }
 .tip.on{opacity:1}
 .tip .tt{font-family:var(--serif);font-weight:600;font-size:13.5px;margin-bottom:1px}
-.tip .ta{color:#c7cdda;font-style:italic;margin-bottom:5px}
-.tip .tl{color:#aeb6c6;font-size:11.5px;margin-top:4px}
+.tip .ta{color:#d9cfb9;font-style:italic;margin-bottom:5px}
+.tip .tl{color:#c2b8a2;font-size:11.5px;margin-top:4px}
 .tip .tchips{display:flex;gap:4px;flex-wrap:wrap;margin-top:6px}
 .tip .tc{font-size:10.5px;padding:1px 6px;border-radius:9px;color:#fff;white-space:nowrap}
 
@@ -199,7 +200,7 @@ thead th.notsort{cursor:default}
 tbody td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
 tbody tr{cursor:pointer;transition:background .1s}
 tbody tr:hover{background:var(--panel-2)}
-tbody tr.sel{background:#e8ead6}
+tbody tr.sel{background:#efe4cd}
 tbody tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--gold)}
 .tw-title{font-family:var(--serif);font-size:15px;font-weight:600;line-height:1.2}
 .tw-auth{color:var(--ink-soft);font-size:12px;font-style:italic;margin-top:1px}
@@ -233,14 +234,13 @@ footer.foot{
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important}
 }
+.home-nav{margin:0 0 14px}
+.home-btn{display:inline-flex;align-items:center;gap:.42em;font-size:12.5px;font-weight:600;letter-spacing:.03em;color:var(--indigo);text-decoration:none;padding:7px 14px;border:1px solid var(--rule,#ddd0b6);border-radius:999px;background:var(--card,#fbf6ec);transition:background .14s,border-color .14s}
+.home-btn:hover{background:#fff;border-color:var(--marigold)}
+.home-btn .ar{color:var(--madder);font-weight:700;font-size:1.05em;line-height:0}
 </style>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<style>
-.home-nav{margin:0 0 16px}
-.home-btn{display:inline-flex;align-items:center;gap:.42em;font:600 12.5px/1 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.02em;color:#16223b;text-decoration:none;padding:7px 13px;border:1px solid #c2c7b8;border-radius:999px;background:rgba(255,255,255,.6);transition:background .14s,border-color .14s}
-.home-btn:hover{background:#fff;border-color:#c19a3f}
-.home-btn .ar{color:#c19a3f;font-weight:700;font-size:1.05em;line-height:0}
-</style>
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 <div class="wrap">
@@ -402,7 +402,7 @@ const path = d3.geoPath(projection);
 const zoomG = svg.append("g").attr("class","zoom");
 const gGrat = zoomG.append("g");
 const gLand = zoomG.append("g");
-const gStates = zoomG.append("g");
+const gStates = zoomG.append("g").attr("opacity",0);
 const gLabel = zoomG.append("g");
 const gMark = zoomG.append("g");
 svg.append("rect").attr("class","frame").attr("x",1).attr("y",1).attr("width",VBW-2).attr("height",VBH-2);
@@ -724,6 +724,18 @@ function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','
 
 /* ---------------- go ---------------- */
 applyFilter();
+</script>
+<script>
+const RL_MAP = {"0":"tx-rig-veda","1":"tx-baudhayana-shulba-sutra","2":"tx-brihadaranyaka-and-chandogya-upanishads","3":"tx-ashtadhyayi","4":"tx-anatta-lakkhana-sutta","5":"tx-therigatha","6":"tx-acaranga-sutra","7":"tx-katha-isha-mundaka-upanishads","8":"tx-dhammapada","9":"tx-the-edicts-of-ashoka","10":"tx-ramayana","11":"tx-mimamsa-sutra","12":"tx-vaisheshika-sutra","13":"tx-mahabharata","14":"tx-arthashastra","15":"tx-bhagavad-gita","16":"tx-charaka-samhita","17":"tx-sushruta-samhita","18":"tx-manusmriti","19":"tx-natyashastra","20":"tx-the-interior-landscape-and-poems-of-love-and-war","21":"tx-nyaya-sutra","22":"tx-gathasaptasati","23":"tx-mulamadhyamakakarika","24":"tx-the-panchatantra","25":"tx-yajnavalkya-smriti","26":"tx-kama-sutra","27":"tx-tattvartha-sutra","28":"tx-yoga-sutras","29":"tx-samkhya-karika","30":"tx-abhijnanashakuntalam","31":"tx-meghaduta","32":"tx-vimshatika-and-trimshika","33":"tx-tirukkural","34":"tx-silappatikaram","35":"tx-shatakatraya","36":"tx-mrichchhakatika","37":"tx-aryabhatiya","38":"tx-manimekalai","39":"tx-mahavamsa","40":"tx-pancasiddhantika-and-brihat-samhita","41":"tx-devi-mahatmya","42":"tx-brahmasphutasiddhanta","43":"tx-tiruppavai","44":"tx-brahma-sutras-with-shankara-s-commentary","45":"tx-dhvanyaloka","46":"tx-mayamata","47":"tx-vikramarjuna-vijaya","48":"tx-bhagavata-purana","49":"tx-abhinavabharati","50":"tx-kitab-al-hind","51":"tx-andhra-mahabharatamu","52":"tx-brahma-sutras-with-ramanuja-s-commentary","53":"tx-periya-puranam","54":"tx-rajatarangini","55":"tx-siddhanta-shiromani","56":"tx-vachana-poetry","57":"tx-vachanas","58":"tx-ramavataram","59":"tx-gita-govinda","60":"tx-sivagnana-bodham","61":"tx-sangita-ratnakara","62":"tx-brahmasutrabhashya","63":"tx-dnyaneshwari","64":"tx-selected-hindavi-and-persian-verse","65":"tx-fawa-id-al-fu-ad","66":"tx-sarvadarshanasamgraha","67":"tx-vakhs","68":"tx-fatawa-i-jahandari","69":"tx-bijak-and-other-poems","70":"tx-tantrasangraha","71":"tx-baburnama","72":"tx-adhyatma-ramayanam-kilippattu","73":"tx-padavali","74":"tx-ramcharitmanas","75":"tx-humayun-nama","76":"tx-ain-i-akbari","77":"tx-muntakhab-al-tawarikh","78":"tx-guru-granth-sahib","79":"tx-abhangas","80":"tx-majma-ul-bahrain","81":"tx-selected-poems","82":"tx-kafis","83":"tx-shah-jo-risalo","84":"tx-heer","85":"tx-kulliyat","86":"tx-essays","87":"tx-diwan-e-ghalib-and-the-letters","88":"tx-marsiya","89":"tx-dastanbuy","90":"tx-gulamgiri","91":"tx-musaddas-e-hali","92":"tx-stri-purush-tulana","93":"tx-the-high-caste-hindu-woman","94":"tx-1893-chicago-address-and-selections-from-raja-yo","95":"tx-poverty-and-un-british-rule-in-india","96":"tx-the-economic-history-of-india","97":"tx-the-arctic-home-in-the-vedas","98":"tx-sultana-s-dream","99":"tx-hind-swaraj","100":"tx-the-indian-war-of-independence-1857","101":"tx-gitanjali-and-nationalism","102":"tx-gita-rahasya","103":"tx-ghare-baire","104":"tx-selected-poems-esp-bidrohi","105":"tx-the-problem-of-the-rupee-its-origin-and-its-solu","106":"tx-hindutva-who-is-a-hindu","107":"tx-the-reconstruction-of-religious-thought-in-islam","108":"tx-annihilation-of-caste","109":"tx-godaan","110":"tx-muna-madan","111":"tx-pakistan-or-the-partition-of-india","112":"tx-lihaaf-and-other-stories","113":"tx-gamperaliya","114":"tx-economy-of-permanence","115":"tx-paraja","116":"tx-the-discovery-of-india","117":"tx-speech-to-the-constituent-assembly-of-pakistan-a","118":"tx-states-and-minorities","119":"tx-subh-e-azadi","120":"tx-siyah-hashiye","121":"tx-the-constitution-of-india-and-ambedkar-s-closing"};
+(function(){
+  var tb=document.getElementById('tbody');
+  if(!tb) return;
+  tb.addEventListener('dblclick',function(e){
+    var tr=e.target.closest('tr'); if(!tr||!tr.dataset.id) return;
+    var rid=RL_MAP[tr.dataset.id];
+    window.location.href = rid ? ('reading-list.html#'+rid) : 'reading-list.html';
+  });
+})();
 </script>
 </body>
 </html>

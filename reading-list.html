@@ -2,37 +2,107 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Great Books of the Indian Subcontinent</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
 <style>
-:root{--ink:#16223b;--ink-soft:#525d78;--ink-faint:#8a92a6;--page:#e2e6dc;--panel:#f4f5ef;--line:#d3d6ca;--gold:#c19a3f;
---serif:"Palatino Linotype","Book Antiqua","URW Palladio L",Palatino,"Iowan Old Style",Georgia,serif;
---sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+:root{
+  --cream:#f6efe0; --card:#fbf6ec; --panel2:#f1e7d4;
+  --indigo:#26305f; --indigo2:#323e78;
+  --ink:#241f1a; --ink2:#5d5346; --ink3:#8a7f6d;
+  --madder:#b23a2b; --marigold:#e2a013; --teal:#237d72;
+  --line:#e6dcc8; --rule:#ddd0b6;
+  --disp:"Marcellus",Georgia,serif;
+  --sans:"Mukta",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--page);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;padding:clamp(10px,2.4vw,26px)}
-.wrap{max-width:820px;margin:0 auto;background:var(--panel);border:1px solid var(--ink);padding:clamp(20px,4vw,52px)}
-h1{font-family:var(--serif);font-weight:600;font-size:clamp(27px,5vw,42px);line-height:1.08;margin:0 0 6px}
-.sub{font-family:var(--serif);font-style:italic;color:var(--ink-soft);font-size:clamp(15px,2.4vw,19px);margin:0 0 20px}
-.lede{font-size:15.5px;line-height:1.62;color:#2b3448;max-width:74ch;margin:0 0 16px}
-h2.h{font-family:var(--serif);font-weight:600;font-size:clamp(20px,3.2vw,27px);border-bottom:2px solid var(--ink);padding:24px 0 8px;margin:30px 0 16px;scroll-margin-top:10px}
-.note{font-family:var(--serif);font-style:italic;color:var(--ink-soft);font-size:14.5px;line-height:1.58;max-width:80ch;margin:0 0 17px}
-.note strong{font-style:normal}
-.e{margin:0 0 18px;max-width:78ch;scroll-margin-top:12px}
-.t{font-family:var(--serif);font-weight:600;font-size:18px;line-height:1.25}
-.m{color:var(--ink-soft);font-size:13px;margin-top:2px;line-height:1.4}
-.a{margin:5px 0 0;font-size:14.5px;line-height:1.58;color:#2b3448}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-</style><link rel="icon" href="favicon.svg" type="image/svg+xml">
-<style>
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:16px;font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased;padding:clamp(12px,2.6vw,30px)}
+.wrap{max-width:1120px;margin:0 auto}
 .home-nav{margin:0 0 16px}
-.home-btn{display:inline-flex;align-items:center;gap:.42em;font:600 12.5px/1 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.02em;color:#16223b;text-decoration:none;padding:7px 13px;border:1px solid #c2c7b8;border-radius:999px;background:rgba(255,255,255,.6);transition:background .14s,border-color .14s}
-.home-btn:hover{background:#fff;border-color:#c19a3f}
-.home-btn .ar{color:#c19a3f;font-weight:700;font-size:1.05em;line-height:0}
+.home-btn{display:inline-flex;align-items:center;gap:.42em;font-size:12.5px;font-weight:600;letter-spacing:.03em;color:var(--indigo);text-decoration:none;padding:7px 14px;border:1px solid var(--rule);border-radius:999px;background:var(--card);transition:background .14s,border-color .14s}
+.home-btn:hover{background:#fff;border-color:var(--marigold)}
+.home-btn .ar{color:var(--madder);font-weight:700;font-size:1.05em;line-height:0}
+
+.rl-head{background:var(--indigo);color:#f3ead6;border-radius:4px;padding:clamp(24px,4vw,40px) clamp(22px,4vw,44px);position:relative;overflow:hidden;margin:0 0 26px}
+.rl-head:after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:repeating-linear-gradient(90deg,transparent 0 14px,rgba(226,160,19,.6) 14px 15px);border-bottom:3px solid var(--marigold)}
+.rl-head h1{font-family:var(--disp);font-weight:400;font-size:clamp(28px,5vw,48px);line-height:1.06;margin:0 0 8px;letter-spacing:.005em}
+.rl-head .sub{font-size:clamp(14px,2vw,17px);color:var(--marigold);margin:0 0 18px;letter-spacing:.01em}
+.rl-head .lede{font-size:15.5px;line-height:1.62;color:#e5dcc7;max-width:80ch;margin:0;font-weight:300}
+
+.layout{display:grid;grid-template-columns:1fr;gap:26px;align-items:start}
+@media(min-width:920px){.layout{grid-template-columns:250px 1fr;gap:40px}}
+
+/* ---- table of contents ---- */
+.toc{background:var(--card);border:1px solid var(--line);border-radius:4px}
+@media(min-width:920px){.toc{position:sticky;top:16px;max-height:calc(100vh - 32px);overflow:auto}}
+.toc>summary{list-style:none;cursor:pointer;font-family:var(--disp);font-size:16px;color:var(--indigo);padding:14px 16px;display:flex;align-items:center;justify-content:space-between}
+.toc>summary::-webkit-details-marker{display:none}
+.toc>summary:after{content:"▾";color:var(--madder);font-size:13px}
+@media(min-width:920px){.toc>summary{display:none}}
+.toc-tools{display:flex;gap:8px;padding:12px 14px 6px}
+.toc-tools button{flex:1;font:inherit;font-size:11.5px;font-weight:600;letter-spacing:.02em;color:var(--ink2);background:var(--panel2);border:1px solid var(--line);border-radius:5px;padding:6px 8px;cursor:pointer}
+.toc-tools button:hover{border-color:var(--marigold);color:var(--indigo)}
+.toc nav{padding:4px 8px 12px;display:flex;flex-direction:column}
+.toc-link{display:flex;align-items:center;gap:9px;padding:7px 8px;border-radius:5px;text-decoration:none;color:var(--ink2);font-size:13.5px;line-height:1.25}
+.toc-link:hover{background:var(--panel2);color:var(--indigo)}
+.toc-link.active{background:var(--panel2);color:var(--indigo);font-weight:600}
+.toc-link .dot{width:9px;height:9px;border-radius:50%;flex:none}
+.toc-link .tl-num{width:14px;text-align:center;font-weight:700;font-size:12px;color:var(--ink3);flex:none}
+.toc-link.active .tl-num{color:var(--indigo)}
+.toc-link .tl-txt{flex:1}
+
+/* ---- accordion sections ---- */
+.content{min-width:0}
+.sec{border-bottom:1px solid var(--line);scroll-margin-top:14px}
+.sec>summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:12px;padding:18px 0 12px;font-family:var(--disp);font-weight:400;font-size:clamp(20px,3vw,27px);color:var(--indigo);border-bottom:2px solid var(--c);position:relative}
+.sec>summary::-webkit-details-marker{display:none}
+.sec>summary .tnum{flex:none;min-width:1.7em;height:1.7em;display:inline-flex;align-items:center;justify-content:center;background:var(--c);color:#fff;border-radius:5px;font-size:15px;font-family:var(--sans);font-weight:700;align-self:center}
+.sec>summary .tnum-x{font-size:12px}
+.sec>summary .h-txt{flex:1;line-height:1.12}
+.sec>summary .chev{flex:none;align-self:center;width:12px;height:12px;border-right:2px solid var(--ink3);border-bottom:2px solid var(--ink3);transform:rotate(45deg);transition:transform .18s;margin-left:6px}
+.sec[open]>summary .chev{transform:rotate(-135deg)}
+.sec>summary:hover .h-txt{color:var(--indigo2)}
+.secbody{padding:16px 0 26px}
+.note{color:var(--ink2);font-size:14.5px;line-height:1.6;max-width:82ch;margin:0 0 15px;padding-left:14px;border-left:3px solid var(--rule)}
+.note strong{color:var(--indigo);font-weight:600}
+.e{margin:0 0 18px;max-width:80ch;scroll-margin-top:14px;border-left:2px solid transparent;padding-left:0;transition:background .4s,border-color .4s,padding-left .2s}
+.e:target{background:#f6efd8;border-left:2px solid var(--marigold);padding-left:12px;border-radius:2px}
+.t{font-family:var(--sans);font-weight:600;font-size:17px;line-height:1.3;color:var(--indigo)}
+.t em{font-style:italic;font-weight:600}
+.m{color:var(--ink3);font-size:13px;margin-top:2px;line-height:1.4}
+.a{margin:5px 0 0;font-size:14.5px;line-height:1.6;color:var(--ink2)}
+.a em{color:var(--ink)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.chev{transition:none}}
 </style>
-</head><body><div class="wrap">
-<p class="home-nav"><a class="home-btn" href="index.html"><span class="ar">&lsaquo;</span> Home</a></p>
-<h1>Great Books of the Indian Subcontinent</h1>
-<p class="note"><em>A reading list across South Asia and the Indosphere</em></p>
-<p class="lede">This is a Great Books reading list for the Indian subcontinent — an attempt to do for South Asia something like what programs such as St John&#x27;s College do for the Western canon: to gather the primary texts a serious, non-specialist reader would want to have read in order to follow the civilization&#x27;s long argument with itself. It is organized by theme rather than strictly by chronology, and it takes &quot;Indian&quot; in the broad, older sense — the whole Indosphere, reaching across Pakistan, Bangladesh, Sri Lanka, Nepal, and the Afghan and Pashto sphere; across the Hindu, Buddhist, Jain, Sikh, and Islamic traditions; and across Sanskrit, Prakrit, Pali, Tamil, Kannada, Telugu, Malayalam, Marathi, Odia, Bengali, Awadhi, Braj, Hindi, Punjabi, Sindhi, Kashmiri, Nepali, Sinhala, Persian, Urdu, Pashto, and Chagatai Turkish. Controversial texts are kept in, set against their counter-texts, rather than left out. The list stops at 1950. The subcontinent&#x27;s post-independence literature and social science are extraordinary, but they are a different and far larger project, and ending at the founding moment keeps this a list about a tradition rather than about the present. Dates for the oldest works are contested ranges, not fixed points. Each entry leads with the work, its author, and an approximate date, followed by a short note on why it earns a place and how it speaks to the others around it.</p>
-<h2 class="h" id="theme-theme-1-metaphysics-and-the-self-what-s-real-wha">Theme 1 — Metaphysics and the Self: What&#x27;s Real, What Am I?</h2>
+</head>
+<body>
+<div class="wrap">
+  <p class="home-nav"><a class="home-btn" href="index.html"><span class="ar">&lsaquo;</span> Home</a></p>
+  <header class="rl-head">
+    <h1>Great Books of the Indian Subcontinent</h1>
+    <p class="sub">A reading list across South Asia and the Indosphere</p>
+    <p class="lede">This is a Great Books reading list for the Indian subcontinent — an attempt to do for South Asia something like what programs such as St John&#x27;s College do for the Western canon: to gather the primary texts a serious, non-specialist reader would want to have read in order to follow the civilization&#x27;s long argument with itself. It is organized by theme rather than strictly by chronology, and it takes &quot;Indian&quot; in the broad, older sense — the whole Indosphere, reaching across Pakistan, Bangladesh, Sri Lanka, Nepal, and the Afghan and Pashto sphere; across the Hindu, Buddhist, Jain, Sikh, and Islamic traditions; and across Sanskrit, Prakrit, Pali, Tamil, Kannada, Telugu, Malayalam, Marathi, Odia, Bengali, Awadhi, Braj, Hindi, Punjabi, Sindhi, Kashmiri, Nepali, Sinhala, Persian, Urdu, Pashto, and Chagatai Turkish. Controversial texts are kept in, set against their counter-texts, rather than left out. The list stops at 1950. The subcontinent&#x27;s post-independence literature and social science are extraordinary, but they are a different and far larger project, and ending at the founding moment keeps this a list about a tradition rather than about the present. Dates for the oldest works are contested ranges, not fixed points. Each entry leads with the work, its author, and an approximate date, followed by a short note on why it earns a place and how it speaks to the others around it.</p>
+  </header>
+  <div class="layout">
+    <details class="toc" open>
+      <summary>Contents</summary>
+      <div class="toc-tools"><button data-all="open" type="button">Expand all</button><button data-all="close" type="button">Collapse all</button></div>
+      <nav>
+      <a class="toc-link" href="#theme-theme-1-metaphysics-and-the-self-what-s-real-wha" data-t="theme-theme-1-metaphysics-and-the-self-what-s-real-wha"><span class="dot" style="background:#3d3b8e"></span><span class="tl-num">1</span><span class="tl-txt">Metaphysics & the Self</span></a>
+      <a class="toc-link" href="#theme-theme-2-mathematics-astronomy-and-natural-philos" data-t="theme-theme-2-mathematics-astronomy-and-natural-philos"><span class="dot" style="background:#0e8c8c"></span><span class="tl-num">2</span><span class="tl-txt">Mathematics & Science</span></a>
+      <a class="toc-link" href="#theme-theme-3-dharma-law-and-the-ordering-of-society" data-t="theme-theme-3-dharma-law-and-the-ordering-of-society"><span class="dot" style="background:#b0871a"></span><span class="tl-num">3</span><span class="tl-txt">Dharma, Law & Society</span></a>
+      <a class="toc-link" href="#theme-theme-4-statecraft-and-political-economy" data-t="theme-theme-4-statecraft-and-political-economy"><span class="dot" style="background:#b23a2e"></span><span class="tl-num">4</span><span class="tl-txt">Statecraft & Political Economy</span></a>
+      <a class="toc-link" href="#theme-theme-5-epic-ethics-action-duty-and-the-problem-" data-t="theme-theme-5-epic-ethics-action-duty-and-the-problem-"><span class="dot" style="background:#6a2fa0"></span><span class="tl-num">5</span><span class="tl-txt">Epic Ethics</span></a>
+      <a class="toc-link" href="#theme-theme-6-aesthetics-poetry-drama-and-desire" data-t="theme-theme-6-aesthetics-poetry-drama-and-desire"><span class="dot" style="background:#c4257e"></span><span class="tl-num">6</span><span class="tl-txt">Aesthetics</span></a>
+      <a class="toc-link" href="#theme-theme-7-devotion-pluralism-and-argument-across-t" data-t="theme-theme-7-devotion-pluralism-and-argument-across-t"><span class="dot" style="background:#e07b00"></span><span class="tl-num">7</span><span class="tl-txt">Devotion & Pluralism</span></a>
+      <a class="toc-link" href="#theme-theme-8-the-argument-about-nationhood" data-t="theme-theme-8-the-argument-about-nationhood"><span class="dot" style="background:#2c6e9b"></span><span class="tl-num">8</span><span class="tl-txt">The Argument About Nationhood</span></a>
+      <a class="toc-link" href="#theme-theme-9-the-modern-age-in-fiction-and-verse" data-t="theme-theme-9-the-modern-age-in-fiction-and-verse"><span class="dot" style="background:#2e8b4e"></span><span class="tl-num">9</span><span class="tl-txt">The Modern Age in Fiction & Verse</span></a>
+      <a class="toc-link" href="#theme-closing-notes" data-t="theme-closing-notes"><span class="dot" style="background:#26305f"></span><span class="tl-num">•</span><span class="tl-txt">Closing notes</span></a>
+      </nav>
+    </details>
+    <main class="content">
+    <details class="sec" id="theme-theme-1-metaphysics-and-the-self-what-s-real-wha" open style="--c:#3d3b8e">
+      <summary class="h"><span class="tnum">1</span><span class="h-txt">Theme 1 — Metaphysics and the Self: What&#x27;s Real, What Am I?</span><span class="chev" aria-hidden="true"></span></summary>
+      <div class="secbody">
 <p class="note"><em>The schools (darshanas).</em> Indian philosophy is conventionally surveyed as nine classical schools: the six &quot;orthodox&quot; (<em>astika</em>, accepting Vedic authority) systems, usually paired as <strong>Nyaya–Vaisheshika</strong> (logic and epistemology; atomist metaphysics), <strong>Samkhya–Yoga</strong> (dualist enumeration; its meditative discipline), and <strong>Mimamsa–Vedanta</strong> (ritual and linguistic hermeneutics; the metaphysics of Brahman); and the three &quot;heterodox&quot; (<em>nastika</em>) systems — <strong>Carvaka</strong> (materialism), <strong>Buddhist</strong>, and <strong>Jaina</strong>. This theme now covers all nine explicitly. Orthodox: Nyaya (<em>Nyaya Sutra</em>), Vaisheshika (<em>Vaisheshika Sutra</em>), Samkhya (<em>Samkhya Karika</em>), Yoga (<em>Yoga Sutras</em>), Mimamsa (<em>Mimamsa Sutra</em>), Vedanta (the three <em>Brahma Sutra</em> commentaries). Heterodox: Carvaka (reconstructed, below), Buddhist (Madhyamaka via Nagarjuna, Yogacara via Vasubandhu, plus the early Pali material), and Jaina (<em>Acaranga</em> and <em>Tattvartha Sutra</em>). The Tamil Shaiva Siddhanta text <em>Sivagnana Bodham</em> is kept in deliberately <strong>outside</strong> the classical six, and the <em>Sarvadarshanasamgraha</em> is a 14th-century survey of the entire terrain. The reading order below stays roughly chronological rather than school-by-school — but this note is the map.</p>
 <div class="e" id="tx-rig-veda"><div class="t">Rig Veda (selections: <em>Nasadiya Sukta</em> 10.129, <em>Purusha Sukta</em> 10.90)</div><div class="m">c. 1500–1200 BCE</div><p class="a">The <em>Purusha Sukta</em> is cited later to justify the four-<em>varna</em> social order (Theme 3) — read it here for cosmology, again there for its political afterlife.</p></div>
 <div class="e" id="tx-brihadaranyaka-and-chandogya-upanishads"><div class="t">Brihadaranyaka and Chandogya Upanishads</div><div class="m">c. 700–500 BCE</div><p class="a">The founding <em>Brahman = Atman</em> identity claim.</p></div>
@@ -55,7 +125,11 @@ h2.h{font-family:var(--serif);font-weight:600;font-size:clamp(20px,3.2vw,27px);b
 <div class="e" id="tx-carvaka-lokayata"><div class="t">Carvaka / Lokayata (the materialist school)</div><div class="m">no primary text survives; reconstructed from Jayarasi Bhatta&#x27;s skeptical <em>Tattvopaplavasimha</em> (c. 8th c. CE) and from the summaries of hostile opponents, above all the <em>Carvaka</em> chapter of Madhava&#x27;s <em>Sarvadarshanasamgraha</em> below</div><p class="a">Every survey of Indian philosophy has to reckon with the tradition&#x27;s own materialists, who accepted only perception as a means of knowledge and denied the soul, rebirth, karma, and liberation — and every survey faces the same problem, which is that we know them almost entirely through the people who set out to refute them. Include Carvaka precisely for that reason: it is the standing internal counter-argument to nearly everything else in Theme 1, and a caution about how a canon preserves its losers. Jayarasi&#x27;s text is more radically skeptical than doctrinaire Carvaka, so read it as adjacent evidence rather than the school&#x27;s catechism.</p></div>
 <div class="e" id="tx-sivagnana-bodham"><div class="t">Sivagnana Bodham</div><div class="m">Meykandar, 13th c. CE, Tamil</div><p class="a">The foundational text of Tamil Shaiva Siddhanta, a systematic philosophical school that stands apart from the Sanskrit Vedanta tradition above while clearly in dialogue with it — though whether the twelve sutras are original Tamil or a rendering of a Sanskrit original associated with the <em>Raurava Agama</em> is genuinely contested rather than settled. Argues for an irreducible threefold reality — <em>Pati</em> (God, i.e. Shiva), <em>Pasu</em> (the soul), and <em>Pasa</em> (the bonds of matter and ignorance that hold the soul in bondage) — genuinely distinct from Madhva&#x27;s Dvaita despite superficial resemblance, and worth reading as evidence that South India was producing its own systematic theology in its own language, not simply receiving Sanskrit philosophy secondhand. Kept deliberately outside the classical six-school survey, as a reminder that the <em>darshana</em> map is not the whole territory. One honest trade-off: this entry is here for the <em>system</em>. If you want Tamil Shaivism as a living tradition instead, Tirumular&#x27;s <em>Tirumantiram</em> or a selection from the <em>Tevaram</em> is far more representative and far more readable.</p></div>
 <div class="e" id="tx-sarvadarshanasamgraha"><div class="t">Sarvadarshanasamgraha (&quot;Compendium of All Philosophical Systems&quot;)</div><div class="m">Madhava, 14th c. CE (traditionally identified with the Advaitin Vidyaranya of the Vijayanagara empire)</div><p class="a">A single medieval text that surveys the whole field — sixteen systems, from the Carvaka materialists through the Buddhists and Jains and the orthodox schools up to Advaita Vedanta. It is the closest thing the tradition itself produced to the &quot;introduction to Indian philosophy&quot; this theme is assembling, and it can be read either first, as a map, or last, as a review. One caveat is itself instructive: it is not neutral. Madhava arranges the schools as an ascending hierarchy culminating in his own Advaita, so the ordering is an argument, not a table of contents — a useful lesson in how doxographies smuggle their conclusions into their structure.</p></div>
-<h2 class="h" id="theme-theme-2-mathematics-astronomy-and-natural-philos">Theme 2 — Mathematics, Astronomy, and Natural Philosophy</h2>
+      </div>
+    </details>
+    <details class="sec" id="theme-theme-2-mathematics-astronomy-and-natural-philos" open style="--c:#0e8c8c">
+      <summary class="h"><span class="tnum">2</span><span class="h-txt">Theme 2 — Mathematics, Astronomy, and Natural Philosophy</span><span class="chev" aria-hidden="true"></span></summary>
+      <div class="secbody">
 <div class="e" id="tx-baudhayana-shulba-sutra"><div class="t">Baudhayana Shulba Sutra</div><div class="m">c. 800 BCE, part of the Vedic Kalpa Sutra corpus</div><p class="a">Geometric appendices to Vedic ritual manuals, containing an explicit statement of what is now called the Pythagorean theorem several centuries before Pythagoras. Claim that carefully: Babylonian tablets (Plimpton 322, c. 1800 BCE) list Pythagorean triples a millennium earlier still, so priority over Pythagoras is the defensible statement, not priority outright. The distinctively Indian contribution is the construction context — altars of prescribed shape and area — rather than the relation itself.</p></div>
 <div class="e" id="tx-ashtadhyayi"><div class="t">Ashtadhyayi</div><div class="m">Panini, c. 4th–6th c. BCE (date disputed)</div><p class="a">A complete generative grammar of Sanskrit in roughly 4,000 algebraic-style rules, with explicit rule-ordering and meta-rules — a formal system applied to language. The comparison to formal grammar notations like Backus-Naur Form is a suggestive structural parallel, not a claim of historical influence — and it has a traceable provenance worth naming: Peter Ingerman&#x27;s 1967 note proposing that the notation be called &quot;Panini-Backus Form.&quot;</p></div>
 <div class="e" id="tx-vaisheshika-sutra-2"><div class="t">Vaisheshika Sutra</div><div class="m">Kanada, date disputed <em>(full entry in Theme 1, cross-referenced here)</em></div><p class="a">Read here for the physics rather than the metaphysics: matter composed of indivisible atoms (<em>paramanu</em>) combining in fixed ways, a systematic atomism developed independently of the Greek atomists.</p></div>
@@ -69,7 +143,11 @@ h2.h{font-family:var(--serif);font-weight:600;font-size:clamp(20px,3.2vw,27px);b
 <div class="e" id="tx-tantrasangraha"><div class="t">Tantrasangraha</div><div class="m">Nilakantha Somayaji, 1501 CE, and <strong>Yuktibhasa</strong> — Jyesthadeva, c. 1530 CE, Kerala</div><p class="a">Infinite-series expressions for pi, sine, and cosine, building on the 14th-century work of Madhava of Sangamagrama. Worth noticing that the <em>Yuktibhasa</em> is written in Malayalam prose rather than Sanskrit — a technical mathematical treatise composed in a vernacular, which is unusual and interesting in its own right. The results are mathematically equivalent to those found independently in Europe 150–250 years later. Priority of the Kerala results is well established; the claim that they were transmitted to Europe via Jesuit networks and influenced Newton or Leibniz is a real but largely unproven and contested historiographical argument — keep the two claims separate.</p></div>
 <div class="e" id="tx-the-arctic-home-in-the-vedas"><div class="t">The Arctic Home in the Vedas</div><div class="m">Bal Gangadhar Tilak, 1903</div><p class="a">A case study in astronomical argument mobilized for historiographical stakes — Tilak&#x27;s claimed astronomical dating of Vedic hymns is not accepted by mainstream Indology today but was hugely influential on nationalist historiography and the Aryan-migration debate. His earlier <em>Orion</em> (1893) makes the same case by the same method; this is the more influential and the more extreme of the two, and one of them is enough. (Tilak&#x27;s <em>Gita Rahasya</em> is in Theme 5; his political role in Theme 8.)</p></div>
 <p class="note"><em>Closing note on transmission</em>: the westward journey of the Indian decimal place-value system and zero — through Al-Khwarizmi&#x27;s 9th-century Baghdad and into medieval Europe — is one of the best-documented transmission chains in the history of science, in useful contrast to the Kerala-calculus transmission claim above, which is not.</p>
-<h2 class="h" id="theme-theme-3-dharma-law-and-the-ordering-of-society">Theme 3 — Dharma, Law, and the Ordering of Society</h2>
+      </div>
+    </details>
+    <details class="sec" id="theme-theme-3-dharma-law-and-the-ordering-of-society" open style="--c:#b0871a">
+      <summary class="h"><span class="tnum">3</span><span class="h-txt">Theme 3 — Dharma, Law, and the Ordering of Society</span><span class="chev" aria-hidden="true"></span></summary>
+      <div class="secbody">
 <div class="e" id="tx-manusmriti"><div class="t">Manusmriti (Laws of Manu)</div><div class="m">compiled c. 100 BCE–200 CE</div><p class="a">Codifies caste hierarchy and gender subordination with real legal specificity. Read critically — this is the text Ambedkar publicly burned in 1927, and pairing it with his <em>Annihilation of Caste</em> below is the highest-value juxtaposition on the whole list.</p></div>
 <div class="e" id="tx-yajnavalkya-smriti"><div class="t">Yajnavalkya Smriti</div><div class="m">compiled c. 3rd–5th c. CE</div><p class="a">A later, more systematically organized dharma-text than Manu&#x27;s, and the direct basis for the <em>Mitakshara</em>, one of the two dominant schools of Hindu personal law used into the colonial and post-independence Indian legal system.</p></div>
 <div class="e" id="tx-tirukkural"><div class="t">Tirukkural</div><div class="m">Thiruvalluvar, date disputed (c. 1st–5th c. CE, most often placed c. 5th c. CE), Tamil</div><p class="a">1,330 aphoristic couplets in three books — virtue (<em>aram</em>), wealth and governance (<em>porul</em>), and love (<em>inbam</em>) — the same fourfold <em>purushartha</em> structure the Sanskrit tradition uses, worked out independently in Tamil. Its dating is entangled with Tamil identity politics in exactly the way this list flags for Tilak and the <em>Mahavamsa</em> — the early bound is defended for reasons that are not purely philological. Notably, and unlike Manusmriti, it does not organize its ethics around caste or invoke a specific deity, which is part of why it&#x27;s been claimed across religious and caste lines in Tamil culture as a shared ethical inheritance rather than a sectarian text. Read the <em>aram</em> book here for its dharma content; its <em>porul</em> book belongs equally in Theme 4 as a genuine treatise on statecraft and political economy, and its <em>inbam</em> book in Theme 6 as love poetry — it&#x27;s really three books in one, and worth treating as required reading in all three places rather than picking one.</p></div>
@@ -80,7 +158,11 @@ h2.h{font-family:var(--serif);font-weight:600;font-size:clamp(20px,3.2vw,27px);b
 <div class="e" id="tx-the-high-caste-hindu-woman"><div class="t">The High-Caste Hindu Woman</div><div class="m">Pandita Ramabai, 1887, English</div><p class="a">Written in English for an American audience by a Sanskrit scholar learned enough that orthodox pandits themselves had conferred her title, this is the era&#x27;s most influential exposé of the condition of upper-caste Hindu women — child marriage, enforced widowhood, and the systematic denial of education. Ramabai&#x27;s own trajectory (her conversion to Christianity, her founding of the Sharada Sadan and later the Mukti Mission) makes her a genuinely complicating figure: a reformer who used a Western and Christian platform to indict indigenous patriarchy, and who has been claimed and criticized from several directions since. Read her alongside her contemporary critics and against Ambedkar for the full argument about who gets to speak for the oppressed.</p></div>
 <div class="e" id="tx-sultana-s-dream"><div class="t">Sultana&#x27;s Dream</div><div class="m">Rokeya Sakhawat Hossain, 1905, English</div><p class="a">A feminist utopia in which the seclusion is reversed: men are confined indoors, women run the laboratories and the state, and the country is powered by solar energy and flying cars. Written in English by a Bengali Muslim woman and published in a Madras magazine, it is funny, brief, and much stranger than its reputation suggests. It completes the trio above — Phule, Shinde, Ramabai — with the Muslim voice they otherwise lack, and it predates Tagore&#x27;s &quot;Nationalism&quot; by twelve years.</p></div>
 <div class="e" id="tx-annihilation-of-caste"><div class="t">Annihilation of Caste</div><div class="m">B.R. Ambedkar, 1936</div><p class="a">The essential twentieth-century rebuttal to Manusmriti above, and the culmination of a line (Phule, Shinde, Ramabai) rather than an isolated thunderclap. Ambedkar&#x27;s constructive answer came later, in his turn to Buddhism — <em>The Buddha and His Dhamma</em>, finished in 1956 — which falls outside this list&#x27;s 1950 boundary but is the sequel to read next.</p></div>
-<h2 class="h" id="theme-theme-4-statecraft-and-political-economy">Theme 4 — Statecraft and Political Economy (4th century BCE – 1940s)</h2>
+      </div>
+    </details>
+    <details class="sec" id="theme-theme-4-statecraft-and-political-economy" open style="--c:#b23a2e">
+      <summary class="h"><span class="tnum">4</span><span class="h-txt">Theme 4 — Statecraft and Political Economy (4th century BCE – 1940s)</span><span class="chev" aria-hidden="true"></span></summary>
+      <div class="secbody">
 <div class="e" id="tx-arthashastra"><div class="t">Arthashastra</div><div class="m">attributed to Kautilya, likely composite with layers from c. 300 BCE–300 CE</div><p class="a">Graduated taxation theorized against its own point of diminishing returns; state monopolies on mining, forests, and salt; a catalog of roughly forty methods treasury officials use to embezzle funds, paired with a spy network to catch them; currency debasement as a war-finance tool. <em>Historiographical flag</em>: later stylometric work suggests multiple authors or redactors across centuries, not one Mauryan-era voice.</p></div>
 <div class="e" id="tx-the-edicts-of-ashoka"><div class="t">The Edicts of Ashoka</div><div class="m">rock and pillar inscriptions, 3rd c. BCE</div><p class="a">The earliest decipherable writing in India and the only place a Mauryan emperor speaks in his own voice — carved in stone across the subcontinent in Prakrit, Greek, and Aramaic, and unread for two millennia until James Prinsep deciphered the script in 1837. Ashoka&#x27;s <em>dhamma</em> is a theory of rule built on toleration between sects, welfare works, restraint in punishment, and — in the thirteenth major rock edict — public remorse for the slaughter he himself ordered at Kalinga. Read it immediately after the <em>Arthashastra</em>: the same state, the same century, and the exact opposite answer to the question of what power is for. It is the best counter-text pairing in ancient Indian political thought, and it needs no commentary to land.</p></div>
 <div class="e" id="tx-tirukkural-book-two-porutpal"><div class="t">Tirukkural, Book Two: Porutpal (&quot;On Wealth and Governance&quot;)</div><div class="m">Thiruvalluvar, c. 5th c. CE, Tamil <em>(full entry in Theme 3, cross-referenced here)</em></div><p class="a">A genuinely independent South Indian statecraft treatise, covering kingship, ministers, taxation, and diplomacy — read directly against Kautilya as a second, unrelated Indian tradition arriving at some similar and some quite different conclusions about the ethics of rule.</p></div>
@@ -98,7 +180,11 @@ h2.h{font-family:var(--serif);font-weight:600;font-size:clamp(20px,3.2vw,27px);b
 <div class="e" id="tx-the-problem-of-the-rupee-its-origin-and-its-solu"><div class="t">The Problem of the Rupee: Its Origin and Its Solution</div><div class="m">B.R. Ambedkar, 1923</div><p class="a">Ambedkar&#x27;s LSE doctoral thesis on Indian currency and exchange-rate policy.</p></div>
 <div class="e" id="tx-economy-of-permanence"><div class="t">Economy of Permanence</div><div class="m">J.C. Kumarappa, 1945</div><p class="a">The fullest working-out of Gandhian economics.</p></div>
 <div class="e" id="tx-the-discovery-of-india"><div class="t">The Discovery of India</div><div class="m">Jawaharlal Nehru, 1946 (written in prison)</div><p class="a">Civilizational history married to an explicit argument for state-led industrial planning.</p></div>
-<h2 class="h" id="theme-theme-5-epic-ethics-action-duty-and-the-problem-">Theme 5 — Epic Ethics: Action, Duty, and the Problem of Violence</h2>
+      </div>
+    </details>
+    <details class="sec" id="theme-theme-5-epic-ethics-action-duty-and-the-problem-" open style="--c:#6a2fa0">
+      <summary class="h"><span class="tnum">5</span><span class="h-txt">Theme 5 — Epic Ethics: Action, Duty, and the Problem of Violence</span><span class="chev" aria-hidden="true"></span></summary>
+      <div class="secbody">
 <div class="e" id="tx-bhagavad-gita"><div class="t">Bhagavad Gita (Mahabharata, Book 6)</div><div class="m">core likely c. 200 BCE–200 CE</div><p class="a">Krishna&#x27;s argument to Arjuna for <em>nishkama karma</em> — action without attachment to result.</p></div>
 <div class="e" id="tx-gita-rahasya"><div class="t">Gita Rahasya</div><div class="m">Bal Gangadhar Tilak, 1915, written in Mandalay prison</div><p class="a">A direct rival to Gandhi&#x27;s reading — karma yoga as active, even violent, engagement with duty.</p></div>
 <div class="e" id="tx-mahabharata"><div class="t">Mahabharata (selections beyond the Gita)</div><p class="a">The messier war narrative the Gita&#x27;s clean argument is embedded in.</p></div>
@@ -109,7 +195,11 @@ h2.h{font-family:var(--serif);font-weight:600;font-size:clamp(20px,3.2vw,27px);b
 <p class="note"><em>A note on the many Ramayanas.</em> There is no single Ramayana but a field of tellings — Sanskrit, Tamil, Awadhi, Malayalam, Jain, Thai, Balinese, and several hundred more, some of which invert Valmiki&#x27;s morality entirely, making Ravana the wronged party or Sita the narrator. A.K. Ramanujan&#x27;s essay &quot;Three Hundred Ramayanas&quot; (1991) is the standard short statement of this and the one modern secondary text worth reading alongside this theme, though it falls outside the list&#x27;s 1950 boundary. Its own history is instructive: Delhi University dropped it from a syllabus in 2011 after protests.</p>
 <div class="e" id="tx-silappatikaram"><div class="t">Silappatikaram</div><div class="m">attributed to Ilango Adigal, c. 5th–6th c. CE, Tamil</div><p class="a">One of the &quot;Five Great Epics&quot; of Tamil literature, and a genuinely different kind of epic from the Sanskrit tradition above: its protagonist is Kannagi, a wronged wife whose righteous fury at her husband&#x27;s unjust execution literally burns down the city of Madurai. Kannagi is subsequently deified as a goddess of chastity and justice — a cult (Pattini worship) still practiced in parts of Tamil Nadu, Kerala, and notably Sri Lanka, making this one of the few texts on this list with a living devotional afterlife that itself crosses the India–Sri Lanka boundary this list is trying to take seriously.</p></div>
 <div class="e" id="tx-manimekalai"><div class="t">Manimekalai</div><div class="m">attributed to Sattanar, c. 6th c. CE, Tamil</div><p class="a">The sequel to Silappatikaram, following the daughter of Kovalan and Madhavi — the courtesan for whom he left Kannagi — as she becomes a Buddhist nun. The parentage is the point, and it is often got wrong: Kannagi is childless, and the Buddhist heroine comes from the <em>other</em> household, the one whose existence drives the first epic&#x27;s tragedy. Notable too for embedding real philosophical debate among the era&#x27;s competing schools directly into the epic narrative, making it a literary text and a doxographical one at once.</p></div>
-<h2 class="h" id="theme-theme-6-aesthetics-poetry-drama-and-desire">Theme 6 — Aesthetics: Poetry, Drama, and Desire</h2>
+      </div>
+    </details>
+    <details class="sec" id="theme-theme-6-aesthetics-poetry-drama-and-desire" open style="--c:#c4257e">
+      <summary class="h"><span class="tnum">6</span><span class="h-txt">Theme 6 — Aesthetics: Poetry, Drama, and Desire</span><span class="chev" aria-hidden="true"></span></summary>
+      <div class="secbody">
 <div class="e" id="tx-natyashastra"><div class="t">Natyashastra</div><div class="m">attributed to Bharata Muni, c. 200 BCE–200 CE</div><p class="a">The foundational Sanskrit treatise on dramaturgy, dance, music, and aesthetic experience — comparable in stature to Aristotle&#x27;s <em>Poetics</em>. Introduces <em>rasa</em> theory.</p></div>
 <div class="e" id="tx-abhijnanashakuntalam"><div class="t">Abhijnanashakuntalam</div><div class="m">Kalidasa, c. 4th–5th c. CE</div><p class="a">The single most celebrated Sanskrit play; The chain that carried it to Goethe has two links rather than one: William Jones&#x27;s English translation of 1789, then Georg Forster&#x27;s German rendering of Jones in 1791, which is the text Goethe actually read and raved about.</p></div>
 <div class="e" id="tx-meghaduta"><div class="t">Meghaduta (The Cloud Messenger)</div><div class="m">Kalidasa, c. 4th–5th c. CE</div><p class="a">Lyric register, shorter.</p></div>
@@ -132,7 +222,11 @@ h2.h{font-family:var(--serif);font-weight:600;font-size:clamp(20px,3.2vw,27px);b
 <div class="e" id="tx-diwan-e-ghalib-and-the-letters"><div class="t">Diwan-e-Ghalib, and the letters (<em>Urdu-e-Mualla</em>)</div><div class="m">Mirza Asadullah Khan Ghalib, 1797–1869, Urdu and Persian</div><p class="a">The consensus summit of Urdu poetry — difficult, metaphysical, self-mocking, endlessly quoted by people who have never read a full ghazal — and, separately, the founding document of modern Urdu prose. Ghalib&#x27;s letters invented a conversational register the language simply had not had before: personal, funny, unbuttoned, written to friends rather than to posterity. If a reader from the Urdu-speaking world checks one name against a list like this, it is this one. (His prose account of 1857 is in Theme 8.)</p></div>
 <div class="e" id="tx-marsiya"><div class="t">Marsiya (selections)</div><div class="m">Mir Anis, 1803–1874, Urdu</div><p class="a">The Karbala elegy raised to epic scale: the martyrdom of Husain narrated across hundreds of stanzas, with battle description, lament, and landscape handled at a level the Urdu tradition regards as unmatched. This is the major Shi&#x27;a literary form of the subcontinent, performed annually to this day and otherwise entirely unrepresented here.</p></div>
 <div class="e" id="tx-heer"><div class="t">Heer</div><div class="m">Waris Shah, 1766, Punjabi</div><p class="a">The foundational Punjabi narrative poem, and the telling of the Heer-Ranjha romance that became the language&#x27;s defining text — sung, quoted, and argued over for two and a half centuries. It works as a love story and, underneath, as a sustained attack on clerical authority and family power, which is why it belongs in the same mental file as the Sufi poets in the theme below.</p></div>
-<h2 class="h" id="theme-theme-7-devotion-pluralism-and-argument-across-t">Theme 7 — Devotion, Pluralism, and Argument Across Traditions</h2>
+      </div>
+    </details>
+    <details class="sec" id="theme-theme-7-devotion-pluralism-and-argument-across-t" open style="--c:#e07b00">
+      <summary class="h"><span class="tnum">7</span><span class="h-txt">Theme 7 — Devotion, Pluralism, and Argument Across Traditions</span><span class="chev" aria-hidden="true"></span></summary>
+      <div class="secbody">
 <div class="e" id="tx-bhagavata-purana"><div class="t">Bhagavata Purana (Book X especially)</div><div class="m">c. 9th–10th c. CE</div><p class="a">No Purana appears anywhere else on this list, and this is the one that matters most: arguably the most consequential Hindu text after the Gita and the Ramayana, and the fountainhead of the entire devotional movement whose tributaries make up the rest of this theme. Book X — Krishna&#x27;s childhood, the butter theft, the flute, the gopis — is the portion that shaped more literature, painting, dance, and music than any other single stretch of Sanskrit. Read it first here: without it the theme shows the streams and not the spring.</p></div>
 <div class="e" id="tx-devi-mahatmya"><div class="t">Devi Mahatmya (&quot;Glory of the Goddess&quot;)</div><div class="m">c. 6th c. CE, embedded in the <em>Markandeya Purana</em></div><p class="a">The text that makes the Goddess ultimate reality rather than a consort — she is asked for help by the gods because they cannot manage, and she dispatches the demons herself. It is the founding document of the Shakta tradition and is still recited annually at Durga Puja. Vaishnava and Shaiva devotion are both well covered on this list; without this, the third of the three great streams would be missing entirely.</p></div>
 <div class="e" id="tx-tiruppavai"><div class="t">Tiruppavai</div><div class="m">Andal, 8th c. CE, Tamil</div><p class="a">The only woman among the twelve Vaishnava Alvar poet-saints.</p></div>
@@ -149,7 +243,11 @@ h2.h{font-family:var(--serif);font-weight:600;font-size:clamp(20px,3.2vw,27px);b
 <div class="e" id="tx-fawa-id-al-fu-ad"><div class="t">Fawa&#x27;id al-Fu&#x27;ad</div><div class="m">conversations of Nizamuddin Auliya, compiled by Amir Hasan Sijzi, c. 1308–22, Persian</div><p class="a">The classic <em>malfuzat</em>: a disciple&#x27;s record of his master&#x27;s table talk over fourteen years, and the best window anywhere onto how Sufism actually worked as a social institution in Delhi — who came, what they asked, how a shaikh handled money, politics, and the demands of the powerful. A theme titled &quot;pluralism&quot; that contained no Sufi text at all, only a Mughal prince writing <em>about</em> Sufism, had an obvious hole in it.</p></div>
 <div class="e" id="tx-guru-granth-sahib"><div class="t">Guru Granth Sahib (selections)</div><div class="m">compiled by the Sikh Gurus, core compilation 1604, final form 1708</div><p class="a">Incorporates devotional verse from Kabir and other non-Sikh bhakti poets directly into Sikh scripture.</p></div>
 <div class="e" id="tx-majma-ul-bahrain"><div class="t">Majma-ul-Bahrain (&quot;The Mingling of Two Oceans&quot;)</div><div class="m">Dara Shikoh, 1655</div><p class="a">The Mughal prince&#x27;s attempt to demonstrate philosophical convergence between Sufi Islam and Vedanta.</p></div>
-<h2 class="h" id="theme-theme-8-the-argument-about-nationhood">Theme 8 — The Argument About Nationhood</h2>
+      </div>
+    </details>
+    <details class="sec" id="theme-theme-8-the-argument-about-nationhood" open style="--c:#2c6e9b">
+      <summary class="h"><span class="tnum">8</span><span class="h-txt">Theme 8 — The Argument About Nationhood</span><span class="chev" aria-hidden="true"></span></summary>
+      <div class="secbody">
 <p class="note"><em>This theme deliberately includes the intellectual case for Pakistan&#x27;s founding: a reckoning with &quot;Indian nationhood&quot; that never asks what the argument for a separate Muslim-majority state actually was would miss one of the central disputes of the period.</em></p>
 <div class="e" id="tx-essays"><div class="t">Essays</div><div class="m">Rammohan Roy, early 19th c.</div><p class="a">Reformist rationalism and the Brahmo Samaj.</p></div>
 <div class="e" id="tx-1893-chicago-address-and-selections-from-raja-yo"><div class="t">1893 Chicago Address and selections from Raja Yoga</div><div class="m">Swami Vivekananda</div><p class="a">The neo-Vedanta synthesis, aimed partly at a Western audience.</p></div>
@@ -167,7 +265,11 @@ h2.h{font-family:var(--serif);font-weight:600;font-size:clamp(20px,3.2vw,27px);b
 <div class="e" id="tx-mahavamsa-2"><div class="t">Mahavamsa</div><div class="m">Sri Lanka, c. 5th–6th c. CE <em>(full entry in Theme 4, cross-referenced here)</em></div><p class="a">Read alongside Savarkar&#x27;s and Tilak&#x27;s historiography above as a third instance — this one Sri Lankan and Buddhist rather than Indian and Hindu or Muslim — of a chronicle or historical argument being mobilized to make an exclusive claim about who a nation is really for.</p></div>
 <div class="e" id="tx-states-and-minorities"><div class="t">States and Minorities</div><div class="m">B.R. Ambedkar, 1947</div><p class="a">A civic-constitutional definition of Indian nationhood built explicitly to protect the minorities Savarkar&#x27;s and, in a different way, Iqbal&#x27;s territorial-cultural definitions each leave out on their own terms.</p></div>
 <div class="e" id="tx-the-constitution-of-india-and-ambedkar-s-closing"><div class="t">The Constitution of India and Ambedkar&#x27;s closing speech to the Constituent Assembly</div><div class="m">adopted 26 November 1949; speech delivered 25 November 1949</div><p class="a">This is where the argument of the whole theme was actually settled, and ending without it would be like ending the Federalist debate without the Constitution: of the competing visions above — Savarkar&#x27;s cultural nation, Iqbal&#x27;s and Jinnah&#x27;s separate homeland, Tagore&#x27;s refusal of nationalism, Gandhi&#x27;s village order, Ambedkar&#x27;s constitutional proceduralism — one of them won, and this is the document in which it did. The speech is the direct sequel to <em>Annihilation of Caste</em>: Ambedkar warns that political democracy laid over an unreformed social order is &quot;a life of contradictions,&quot; insists that India must abandon the &quot;grammar of anarchy&quot; — the civil disobedience that was right against a colonial state and corrosive against a self-governing one — and cautions against hero-worship in politics. He is not triumphant. He is warning the people who have just won.</p></div>
-<h2 class="h" id="theme-theme-9-the-modern-age-in-fiction-and-verse">Theme 9 — The Modern Age in Fiction and Verse (to 1949)</h2>
+      </div>
+    </details>
+    <details class="sec" id="theme-theme-9-the-modern-age-in-fiction-and-verse" open style="--c:#2e8b4e">
+      <summary class="h"><span class="tnum">9</span><span class="h-txt">Theme 9 — The Modern Age in Fiction and Verse (to 1949)</span><span class="chev" aria-hidden="true"></span></summary>
+      <div class="secbody">
 <p class="note"><em>This theme exists because the list would otherwise carry the subcontinent&#x27;s modern political argument without its modern literature — the novels, stories, and poems in which the same questions of caste, gender, poverty, and partition were worked out in people&#x27;s lives rather than in manifestos. It stops, as the whole list does, in 1949.</em></p>
 <div class="e" id="tx-ghare-baire"><div class="t">Ghare Baire (<em>The Home and the World</em>)</div><div class="m">Rabindranath Tagore, 1916, Bengali</div><p class="a">The swadeshi argument staged as a marriage: a liberal landlord, his wife, and the charismatic nationalist who moves into their house and sets the district alight. Tagore gives the nationalist the best rhetoric and then shows the bill — the boycott falling hardest on the poorest Muslim traders, who cannot afford the imported goods they are being forced to burn. The novel to read directly beside his &quot;Nationalism&quot; essay in Theme 8, since the essay states the position and this dramatizes what it costs.</p></div>
 <div class="e" id="tx-godaan"><div class="t">Godaan (<em>The Gift of a Cow</em>)</div><div class="m">Premchand, 1936, Hindi</div><p class="a">The canonical modern Hindi novel, and the one book to read if the question is what the political economy of Theme 4 looked like from underneath. Hori, a peasant, wants a cow; the wanting draws him into debt, and the debt into the machinery of moneylender, priest, landlord, and village council, each taking a turn. Premchand had written the arguments elsewhere; here he simply follows a man down. He died the same year.</p></div>
@@ -177,7 +279,11 @@ h2.h{font-family:var(--serif);font-weight:600;font-size:clamp(20px,3.2vw,27px);b
 <div class="e" id="tx-paraja"><div class="t">Paraja</div><div class="m">Gopinath Mohanty, 1945, Odia</div><p class="a">A novel about a Paraja family in the Koraput hills losing its land to a moneylender and its freedom to bonded labour. It is the only entry on this list that puts Adivasi life at the center rather than at the edge, and the only Odia one — and given how much weight the list places on caste, the near-absence of Adivasi India everywhere else is an asymmetry worth stating plainly rather than papering over.</p></div>
 <div class="e" id="tx-subh-e-azadi"><div class="t">&quot;Subh-e-Azadi&quot; (&quot;Freedom&#x27;s Dawn&quot;)</div><div class="m">Faiz Ahmed Faiz, 1947, Urdu (Pakistan)</div><p class="a">Written in the immediate aftermath of independence, and startlingly unsentimental about it — &quot;this stained light, this night-bitten dawn&quot; — a landmark of Urdu poetry&#x27;s ambivalent response to the moment the political theme above treats mostly through the theorists who argued for it.</p></div>
 <div class="e" id="tx-siyah-hashiye"><div class="t">Siyah Hashiye (<em>Black Margins</em>)</div><div class="m">Saadat Hasan Manto, 1948, Urdu</div><p class="a">Thirty-odd Partition sketches, some only a few lines long, written in the immediate aftermath and published while the violence was still current: a looter arguing over the division of spoils, a corpse mistaken for a bundle, a man killed for belonging to the wrong side of a street. Manto refuses both consolation and explanation. He offers no politics, no blame that resolves, and no character large enough to carry meaning — which is the argument. (His most famous story, &quot;Toba Tek Singh,&quot; came later, in 1955, the year he died destitute at forty-two; it falls outside this list&#x27;s boundary but is the one to read next.)</p></div>
-<h2 class="h" id="theme-closing-notes">Closing notes</h2>
+      </div>
+    </details>
+    <details class="sec" id="theme-closing-notes" open style="--c:#26305f">
+      <summary class="h"><span class="tnum tnum-x">◆</span><span class="h-txt">Closing notes</span><span class="chev" aria-hidden="true"></span></summary>
+      <div class="secbody">
 <p class="note"><strong>On the &quot;Aryan migration&quot; question</strong>: still a live, politically charged historiographical fight. Tilak&#x27;s astronomical dating arguments (Theme 2) are a direct historical input into the indigenist side of this debate.</p>
 <p class="note"><strong>On orality</strong>: the Vedic and epic material was composed, transmitted, and fixed orally long before it was written down, and reading it as a &quot;book&quot; with an author misdescribes how it came to be. Keep the point to that material, though: the <em>Arthashastra</em>, Kalhana&#x27;s <em>Rajatarangini</em>, the <em>Ain-i-Akbari</em>, and Bhaskara&#x27;s mathematics were all composed as written texts with stable authorial shape.</p>
 <p class="note"><strong>On including controversial texts</strong>: Manusmriti, Barani&#x27;s <em>Fatawa-i-Jahandari</em>, and Savarkar&#x27;s <em>Hindutva</em> are on this list because each was genuinely influential and more honestly confronted directly than excluded. The same logic extends geographically: leaving Iqbal or the Mahavamsa off the list to avoid the arguments they&#x27;re tangled up in would misrepresent how those nations actually came to understand themselves.</p>
@@ -187,4 +293,46 @@ h2.h{font-family:var(--serif);font-weight:600;font-size:clamp(20px,3.2vw,27px);b
 <p class="note"><strong>On women authors</strong>: the Therigatha, Andal, Akka Mahadevi, Lal Ded, Mirabai, Gulbadan Begum, Tarabai Shinde, Pandita Ramabai, Rokeya Sakhawat Hossain, and Ismat Chughtai are the women writing here. That is better than the list managed in earlier drafts, where everything before the eighth century was male and nothing stood between Andal and 1873, but the distribution still reflects who was permitted to write and whose writing was kept.</p>
 <p class="note"><strong>On stopping at 1950</strong>: the boundary is deliberate and it costs something real, worth naming rather than hiding. Outside it fall Amartya Sen&#x27;s entitlement analysis of famine and Mahbub ul Haq&#x27;s human-development work; the Dalit memoir tradition (<em>Baluta</em>, <em>Joothan</em>, <em>Karukku</em>) that carries the Manusmriti-to-Ambedkar arc into lived testimony; Mahasweta Devi on Adivasi India; the Sri Lankan Tamil literature of the civil war; and the great post-independence novels, Urdu, English, and otherwise. Those belong on a companion list of the modern subcontinent, not on this one.</p>
 <p class="note"><strong>Why the theme-based structure still holds</strong>: adding Tamil, Kannada, Telugu, Pashto, and Sinhala/Pali material across the existing themes — rather than segregating it into a separate &quot;regional literatures&quot; section — was the point. Madhva and Sivagnana Bodham complete a philosophical argument that would be incomplete without them; Iqbal completes a political argument that would be incomplete without him; the <em>darshana</em> texts complete the philosophical survey that Theme 1 exists to provide. The same test governed the later additions: nearly every one is the missing half of a pair the list already had — Ashoka against Kautilya, Badauni against Abul Fazl, Ghalib&#x27;s ruined Delhi against Savarkar&#x27;s reconstructed 1857, the Therigatha against the monastic Pali canon, the Constitution against the nationhood arguments that produced it. Everything here belongs to the arguments already running through the list, not beside it.</p>
-</div></body></html>
+      </div>
+    </details>
+    </main>
+  </div>
+</div>
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.toc-link'));
+  var secById={};
+  document.querySelectorAll('.sec').forEach(function(s){secById[s.id]=s;});
+  function openAndScroll(id){
+    var s=secById[id]; if(!s) return;
+    s.open=true;
+    // close mobile toc after pick
+    var toc=document.querySelector('.toc');
+    if(window.matchMedia('(max-width:919px)').matches && toc) toc.open=false;
+    s.scrollIntoView({behavior:(window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'),block:'start'});
+    history.replaceState(null,'','#'+id);
+  }
+  links.forEach(function(a){
+    a.addEventListener('click',function(e){e.preventDefault();openAndScroll(a.getAttribute('data-t'));});
+  });
+  // expand / collapse all
+  document.querySelectorAll('.toc-tools button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var open=b.getAttribute('data-all')==='open';
+      document.querySelectorAll('.sec').forEach(function(s){s.open=open;});
+    });
+  });
+  // scrollspy
+  var map={};links.forEach(function(a){map[a.getAttribute('data-t')]=a;});
+  function setActive(id){links.forEach(function(a){a.classList.toggle('active',a.getAttribute('data-t')===id);});}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(ents){
+      ents.forEach(function(en){ if(en.isIntersecting){ setActive(en.target.id); } });
+    },{rootMargin:'0px 0px -75% 0px',threshold:0});
+    document.querySelectorAll('.sec').forEach(function(s){io.observe(s);});
+  }
+  // open + scroll if hash present on load
+  if(location.hash){var id=location.hash.slice(1); if(secById[id]){secById[id].open=true; setTimeout(function(){openAndScroll(id);},60);} }
+})();
+</script>
+</body></html>
