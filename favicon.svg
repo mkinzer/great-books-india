@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Great Books of the Indian Subcontinent">
+  <rect width="32" height="32" rx="6" fill="#16223b"/>
+  <!-- open book -->
+  <path d="M16 8.6C13.2 7 9.4 7 6.7 8.2V23.4C9.4 22.2 13.2 22.2 16 23.8C18.8 22.2 22.6 22.2 25.3 23.4V8.2C22.6 7 18.8 7 16 8.6Z" fill="#e2e6dc"/>
+  <!-- gold spine -->
+  <rect x="15.15" y="8.3" width="1.7" height="15.5" rx="0.7" fill="#c19a3f"/>
+  <!-- text lines, left page -->
+  <path d="M9 11.4C10.9 10.8 13 10.8 14.4 11.4M9 14.2C10.9 13.6 13 13.6 14.4 14.2M9 17C10.9 16.4 13 16.4 14.4 17" fill="none" stroke="#8a92a6" stroke-width="0.95" stroke-linecap="round"/>
+  <!-- text lines, right page -->
+  <path d="M17.6 11.4C19 10.8 21.1 10.8 23 11.4M17.6 14.2C19 13.6 21.1 13.6 23 14.2M17.6 17C19 16.4 21.1 16.4 23 17" fill="none" stroke="#8a92a6" stroke-width="0.95" stroke-linecap="round"/>
+</svg>
